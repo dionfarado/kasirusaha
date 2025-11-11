@@ -37,7 +37,7 @@ function generateDateRangeQuery() {
   return `from=${start}&to=${end}`;
 }
 
-export default function PenjualanBulanIni() {
+export default function MonthlySales() {
   const [range, setRange] = useState("");
   const [chartData, setChartData] = useState<ChartDataItem[]>([]);
   const [totalPenjualan, setTotalPenjualan] = useState(0);

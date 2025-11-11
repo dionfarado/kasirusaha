@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import { api } from "@/lib/api";
-import { NavMain } from "@/components/nav-main";
-import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
+import NavMain from "@/components/NavMain";
+import { NavUser } from "@/components/NavUser";
+import { TeamSwitcher } from "@/components/Team-Switcher";
 import {
   Boxes,
   Computer,
@@ -183,34 +183,34 @@ export default function SidebarInner() {
       })
       .then((res) => setUser(res.data.user));
   }, []);
-const [activeButton, setActiveButton] = React.useState("ERP")
+  const [activeButton, setActiveButton] = React.useState("ERP");
 
   return (
     <div className="flex h-full flex-col bg-sidebar">
       <div className="p-4 border-b">
-       <TeamSwitcher teams={data.teams} />
-                <div className="flex items-center gap-4 bg-gray-100 border-gray-200 rounded-md p-1 mt-2">
-                 <button 
-                 onClick={() => setActiveButton("ERP")}
-                 className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
-                   activeButton === "ERP"
-                   ? "bg-white border rounded-md shadow-sm"
-                   : ""
-                 }`}
-                 >
-                   ERP
-                 </button>
-                 <button
-                 onClick={() => setActiveButton("Work")}
-                 className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
-                   activeButton === "Work"
-                   ? "bg-white border rounded-md shadow-sm"
-                   : ""
-                 }`}
-                 >
-                   Workspace
-                   </button>
-               </div>
+        <TeamSwitcher teams={data.teams} />
+        <div className="flex items-center gap-4 bg-gray-100 border-gray-200 rounded-md p-1 mt-2">
+          <button
+            onClick={() => setActiveButton("ERP")}
+            className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
+              activeButton === "ERP"
+                ? "bg-white border rounded-md shadow-sm"
+                : ""
+            }`}
+          >
+            ERP
+          </button>
+          <button
+            onClick={() => setActiveButton("Work")}
+            className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
+              activeButton === "Work"
+                ? "bg-white border rounded-md shadow-sm"
+                : ""
+            }`}
+          >
+            Workspace
+          </button>
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto">
@@ -221,5 +221,5 @@ const [activeButton, setActiveButton] = React.useState("ERP")
         <NavUser user={user || data.user} />
       </div>
     </div>
-  )
+  );
 }

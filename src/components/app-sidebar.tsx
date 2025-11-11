@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   AudioWaveform,
   BookOpen,
@@ -25,23 +25,23 @@ import {
   SquareTerminal,
   Users,
   Wallet,
-} from "lucide-react"
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
 // import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavUser } from "@/components/NavUser";
+import { TeamSwitcher } from "@/components/Team-Switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
-import { title } from "process"
-import { url } from "inspector"
-import { Title } from "@radix-ui/react-dialog"
-import { api } from "@/lib/api"
+} from "@/components/ui/sidebar";
+import { title } from "process";
+import { url } from "inspector";
+import { Title } from "@radix-ui/react-dialog";
+import { api } from "@/lib/api";
+import NavMain from "./NavMain";
 
 // This is sample data.
 const data = {
@@ -56,7 +56,6 @@ const data = {
       logo: GalleryVerticalEnd,
       plan: "Perusahaan",
     },
-   
   ],
   navMain: [
     {
@@ -100,236 +99,235 @@ const data = {
     },
     {
       title: "Penjualan",
-      url : "#",
-      icon: HardDriveUpload
+      url: "#",
+      icon: HardDriveUpload,
     },
     {
       title: "Pembelian",
-      url : "#",
+      url: "#",
       icon: HardDriveDownload,
     },
     {
       title: "keuangan",
-      url : "#",
+      url: "#",
       icon: Wallet,
-      items : [
+      items: [
         {
-          title : "Pengeluaran",
-          url : "#"
+          title: "Pengeluaran",
+          url: "#",
         },
         {
-          title : "Pemasukan",
-          url : "#"
+          title: "Pemasukan",
+          url: "#",
         },
         {
-          title : "Transfer Kas/Bank",
-          url : "#"
+          title: "Transfer Kas/Bank",
+          url: "#",
         },
         {
-          title : "Hutang",
-          url : "#"
+          title: "Hutang",
+          url: "#",
         },
         {
-          title : "Piutang",
-          url : "#"
+          title: "Piutang",
+          url: "#",
         },
         {
-          title : "Kategori Keuangan",
-          url : "#"
+          title: "Kategori Keuangan",
+          url: "#",
         },
         {
-          title : "Akun Keuangan",
-          url : "#"
+          title: "Akun Keuangan",
+          url: "#",
         },
         {
-          title : "Manual Jurnal",
-          url : "#"
+          title: "Manual Jurnal",
+          url: "#",
         },
         {
-          title : "Pengecekan",
-          url : "#"
+          title: "Pengecekan",
+          url: "#",
         },
       ],
     },
     {
-      title : "Kasir",
-      url : "#",
-      icon : Computer,
+      title: "Kasir",
+      url: "#",
+      icon: Computer,
       items: [
         {
-          title : "Akses",
-          url : "#",
+          title: "Akses",
+          url: "#",
         },
         {
-          title : "Metode Pembayaran",
-          url : "#",
+          title: "Metode Pembayaran",
+          url: "#",
         },
         {
-          title : "Mode Kasir",
-          url : "#",
+          title: "Mode Kasir",
+          url: "#",
         },
         {
-         title : "Laporan Shift",
-         url : "#", 
+          title: "Laporan Shift",
+          url: "#",
         },
         {
-          title : "Cetal Label Harga",
-          url : "#",
+          title: "Cetal Label Harga",
+          url: "#",
         },
         {
-          title : "Laporan Kasir",
-          url : "#",
+          title: "Laporan Kasir",
+          url: "#",
         },
         {
-          title : "Pengaturan Print",
-          url : "#",
+          title: "Pengaturan Print",
+          url: "#",
         },
         {
-          title : "Pengaturan kasir",
-          url : "#",
+          title: "Pengaturan kasir",
+          url: "#",
         },
       ],
     },
     {
       title: "Data Master",
-      url : "#",
-      icon : Database,
-      items : [
+      url: "#",
+      icon: Database,
+      items: [
         {
-          title : "Proyek",
-          url : "#",
+          title: "Proyek",
+          url: "#",
         },
         {
-          title : "Kategori Produk",
-          url : "#",
+          title: "Kategori Produk",
+          url: "#",
         },
         {
-          title : "Outlet/Gudang",
-          url :"#",
+          title: "Outlet/Gudang",
+          url: "#",
         },
         {
-          title : "Satuan",
-          url : "#",
+          title: "Satuan",
+          url: "#",
         },
         {
-          title : "Konveksi Satuan",
-          url : "#",
+          title: "Konveksi Satuan",
+          url: "#",
         },
         {
-          title : "Diskon",
-          url : "#",
+          title: "Diskon",
+          url: "#",
         },
         {
-          title : "Pajak",
-          url : "#",
+          title: "Pajak",
+          url: "#",
         },
         {
-          title : "Harga Ojek Online",
-          url : "#",
+          title: "Harga Ojek Online",
+          url: "#",
         },
         {
-          title : "File",
-          url : "#",
-        },
-      ],
-    },
-    {
-      title : "Persediaan",
-      url : "#",
-      icon : Boxes,
-      items : [
-        {
-          title : "Stok Produk",
-          url : "#",
-        },
-        {
-          title : "Penyesuaian Stok",
-          url : "#",
-        },
-        {
-          title : "Pindah Gudang",
-          url : "#",
+          title: "File",
+          url: "#",
         },
       ],
     },
     {
-      title : "CRM",
-      url : "#",
-      icon : Contact,
-      items : [
+      title: "Persediaan",
+      url: "#",
+      icon: Boxes,
+      items: [
         {
-          title : "Progam Loyalitas",
-          url : "#",
+          title: "Stok Produk",
+          url: "#",
         },
         {
-          title : "Tingkatan Pelanggan",
-          url : "#",
+          title: "Penyesuaian Stok",
+          url: "#",
         },
         {
-          title : "Point Pelanggan",
-          url : "#",
-        },
-        {
-          title : "Riwayat Poin",
-          url : "#",
+          title: "Pindah Gudang",
+          url: "#",
         },
       ],
     },
     {
-      title : "Laporan",
-      url : "#",
-      icon : FileText,
-      items : [
+      title: "CRM",
+      url: "#",
+      icon: Contact,
+      items: [
         {
-          title : "Laba Rugi",
-          url : "#",
+          title: "Progam Loyalitas",
+          url: "#",
         },
         {
-          title : "Neraca",
-          url : "#",
+          title: "Tingkatan Pelanggan",
+          url: "#",
         },
         {
-          title : "Laporan Penjualan",
-          url : "#",
+          title: "Point Pelanggan",
+          url: "#",
         },
         {
-        title : "Penjualan Item",
-        url : "#",
-        },
-        {
-          title : "Penjualan Produk",
-          url : "#",
-        },
-        {
-          title : "Penjualan Pelanggan",
-           url : "#",
-        },
-        {
-          title : "Pengeluaran Kontak",
-          url : "#",
-        },
-        {
-          title : "HPP Produk",
-          url : "#",
-        },
-        {
-          title : "Riwayat Jurnal",
-          url : "#",
+          title: "Riwayat Poin",
+          url: "#",
         },
       ],
     },
     {
-      title : "Pengaturan",
-      url :"#",
-      icon :  Settings,
+      title: "Laporan",
+      url: "#",
+      icon: FileText,
+      items: [
+        {
+          title: "Laba Rugi",
+          url: "#",
+        },
+        {
+          title: "Neraca",
+          url: "#",
+        },
+        {
+          title: "Laporan Penjualan",
+          url: "#",
+        },
+        {
+          title: "Penjualan Item",
+          url: "#",
+        },
+        {
+          title: "Penjualan Produk",
+          url: "#",
+        },
+        {
+          title: "Penjualan Pelanggan",
+          url: "#",
+        },
+        {
+          title: "Pengeluaran Kontak",
+          url: "#",
+        },
+        {
+          title: "HPP Produk",
+          url: "#",
+        },
+        {
+          title: "Riwayat Jurnal",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Pengaturan",
+      url: "#",
+      icon: Settings,
     },
   ],
-  
-}
+};
 
 type DataActive = {
   name: string;
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const [dataActive, setDataActive] = React.useState<DataActive>();
@@ -339,69 +337,67 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const token = localStorage.getItem("token");
     if (!token) return;
     api
-    .get("/auth/organization/get-full-organization", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      setDataActive(res.data);
-      console.log(res.data);
-    });
+      .get("/auth/organization/get-full-organization", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        setDataActive(res.data);
+        console.log(res.data);
+      });
 
     api
-    .get("/auth/get-session", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      console.log(res.data.user);
-      setUser(res.data.user);
-    })
-  },[]);
+      .get("/auth/get-session", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data.user);
+        setUser(res.data.user);
+      });
+  }, []);
 
-  const [activeButton, setActiveButton] = React.useState("ERP")
+  const [activeButton, setActiveButton] = React.useState("ERP");
 
   return (
-    <Sidebar collapsible="icon" {...props} >
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
-         <div className="flex items-center gap-4 bg-gray-100 border-gray-200 rounded-md p-1 mt-2">
-          <button 
-          onClick={() => setActiveButton("ERP")}
-          className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
-            activeButton === "ERP"
-            ? "bg-white border rounded-md shadow-sm"
-            : ""
-          }`}
+        <div className="flex items-center gap-4 bg-gray-100 border-gray-200 rounded-md p-1 mt-2">
+          <button
+            onClick={() => setActiveButton("ERP")}
+            className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
+              activeButton === "ERP"
+                ? "bg-white border rounded-md shadow-sm"
+                : ""
+            }`}
           >
             ERP
           </button>
           <button
-          onClick={() => setActiveButton("Work")}
-          className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
-            activeButton === "Work"
-            ? "bg-white border rounded-md shadow-sm"
-            : ""
-          }`}
+            onClick={() => setActiveButton("Work")}
+            className={`text-sm w-1/2 py-[2px] font-medium cursor-pointer ${
+              activeButton === "Work"
+                ? "bg-white border rounded-md shadow-sm"
+                : ""
+            }`}
           >
             Workspace
-            </button>
-        </div> 
+          </button>
+        </div>
       </SidebarHeader>
       <SidebarContent>
-        {activeButton === "ERP" && <NavMain items={data.navMain}/> }
+        {activeButton === "ERP" && <NavMain items={data.navMain} />}
         {activeButton === "Work" && (
           <div className="text-gray-800">Coming soon</div>
         )}
-        
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user || data.user} />
       </SidebarFooter>
-      <SidebarRail/>
+      <SidebarRail />
     </Sidebar>
   );
-
 }

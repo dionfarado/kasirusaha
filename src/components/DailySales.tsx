@@ -30,7 +30,7 @@ interface ChartData {
   value: number;
 }
 
-export default function ChartPenjualanHarian() {
+export default function DailySales() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(
     new Date()
   );

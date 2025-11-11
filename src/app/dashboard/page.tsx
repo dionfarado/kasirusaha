@@ -1,10 +1,10 @@
 "use client";
 
-import { AppSidebar } from "@/components/app-sidebar";
-import ChartPenjualanBulan from "@/components/PenjualanBulanan";
-import ChartPenjualan from "@/components/PenjualanBulanan";
-import PenjualanPerHari from "@/components/ChartPenjualanHarian";
-import ProdukTerlaris from "@/components/Terlaris";
+import { AppSidebar } from "@/components/App-Sidebar";
+import ChartPenjualanBulan from "@/components/MonthlySales";
+import ChartPenjualan from "@/components/MonthlySales";
+import PenjualanPerHari from "@/components/DailySales";
+import ProdukTerlaris from "@/components/BestSelling";
 import {
   Breadcrumb,
   BreadcrumbItem,
